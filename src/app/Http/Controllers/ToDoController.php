@@ -100,5 +100,10 @@ class ToDoController extends Controller
      */
     public function destroy($id)
     {
+        //IDに紐づくToDoモデルを取得
+        $toDo = ToDo::find($id);
+
+        //ToDoデータベースから対象のレコードを削除
+        $toDo->delete();
     }
 }
