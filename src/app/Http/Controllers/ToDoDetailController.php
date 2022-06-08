@@ -98,6 +98,10 @@ class ToDoDetailController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //IDに紐づくToDoDetailモデルを取得
+        $toDoDetail = ToDoDetail::find($id);
+
+        //ToDoDetailテーブルから対象のレコードを削除
+        $toDoDetail->delete();
     }
 }
