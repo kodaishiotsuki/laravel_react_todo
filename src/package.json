@@ -26,6 +26,7 @@
     "dependencies": {
         "@emotion/react": "^11.9.0",
         "@emotion/styled": "^11.8.1",
+        "@mui/icons-material": "^5.8.3",
         "@mui/material": "^5.8.3",
         "jquery": "^3.6.0",
         "popper.js": "^1.16.1",
