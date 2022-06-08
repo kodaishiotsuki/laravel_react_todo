@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ToDoController extends Controller
+class ToDoDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,7 @@ class ToDoController extends Controller
      */
     public function index()
     {
-        //ToDoを取得する
-        
-        //取得したToDoを返却する
+        //
     }
 
     /**
