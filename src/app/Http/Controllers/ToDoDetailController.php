@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ToDoDetail\StoreRequest;
+use App\Models\ToDoDetail;
 use Illuminate\Http\Request;
 
 class ToDoDetailController extends Controller
@@ -32,9 +34,18 @@ class ToDoDetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        //新規のToDoDetailモデルを作成
+        $toDoDetail = new ToDoDetail();
+
+        //ToDoDetailモデルに値を設定する
+        $toDoDetail->to_do_id = $request->get('to_do_id');
+        $toDoDetail->name = $request->get('name');
+        $toDoDetail->completed_flag = false;
+
+        //DBにデータを登録
+        $toDoDetail->save();
     }
 
     /**
