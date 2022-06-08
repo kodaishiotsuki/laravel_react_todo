@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/todos', [ToDoController::class, 'index']);
+// Route::get('/todos', [ToDoController::class, 'index']);
+Route::resource('/todos', ToDoController::class);

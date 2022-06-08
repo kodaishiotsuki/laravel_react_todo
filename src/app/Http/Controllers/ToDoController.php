@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ToDo;
 use Illuminate\Http\Request;
 
 class ToDoController extends Controller
@@ -14,8 +15,10 @@ class ToDoController extends Controller
     public function index()
     {
         //ToDoを取得する
-        
+        $toDos = ToDo::get();
+
         //取得したToDoを返却する
+        return $toDos;
     }
 
     /**
