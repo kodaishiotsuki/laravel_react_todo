@@ -9,7 +9,7 @@ export default function ToDo() {
             <CardContent>
                 <List>
                     {[0, 1, 2, 3].map((value) => {
-                        return <ToDoDetail key={value.id} />;
+                        return <ToDoDetail id={value} />;
                     })}
                 </List>
             </CardContent>

@@ -24,7 +24,7 @@ export default function ToDoDetail(props) {
                 <ListItemIcon>
                     <Checkbox edge="start" />
                 </ListItemIcon>
-                <ListItemText primary={`ToDoDetail` + props.id}  />
+                <ListItemText primary={"ToDoDetail" + props.id} />
             </ListItemButton>
         </ListItem>
     );
