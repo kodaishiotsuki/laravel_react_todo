@@ -2,7 +2,7 @@ const { default: axios } = require("axios");
 const { useQueryClient, useQuery } = require("react-query");
 
 const getToDoList = async () => {
-    const { data } = await axios.get("/api/toDos");
+    const { data } = await axios.get("/api/todos");
     return data;
 };
 
