@@ -19046,10 +19046,10 @@ function ToDo(props) {
       title: props.toDo.title
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        children: [0, 1, 2, 3].map(function (value) {
+        children: props.toDo.to_do_details.map(function (detail) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ToDoDetail__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            id: value
-          });
+            detail: detail
+          }, detail.id);
         })
       })
     })]
@@ -19097,10 +19097,10 @@ function ToDoDetail(props) {
           edge: "start"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        primary: "ToDoDetail" + props.id
+        primary: props.detail.name
       })]
     })
-  }, props.id);
+  }, props.detail.id);
 }
 
 /***/ }),
