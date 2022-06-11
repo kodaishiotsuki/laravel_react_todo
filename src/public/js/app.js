@@ -5394,6 +5394,155 @@ const cardClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiCa
 
 /***/ }),
 
+/***/ "./node_modules/@mui/material/CardActions/CardActions.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@mui/material/CardActions/CardActions.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/utils/esm/composeClasses/composeClasses.js");
+/* harmony import */ var _styles_styled__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/styled */ "./node_modules/@mui/material/styles/styled.js");
+/* harmony import */ var _styles_useThemeProps__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../styles/useThemeProps */ "./node_modules/@mui/material/styles/useThemeProps.js");
+/* harmony import */ var _cardActionsClasses__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cardActionsClasses */ "./node_modules/@mui/material/CardActions/cardActionsClasses.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+const _excluded = ["disableSpacing", "className"];
+
+
+
+
+
+
+
+
+
+const useUtilityClasses = ownerState => {
+  const {
+    classes,
+    disableSpacing
+  } = ownerState;
+  const slots = {
+    root: ['root', !disableSpacing && 'spacing']
+  };
+  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_5__["default"])(slots, _cardActionsClasses__WEBPACK_IMPORTED_MODULE_6__.getCardActionsUtilityClass, classes);
+};
+
+const CardActionsRoot = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_7__["default"])('div', {
+  name: 'MuiCardActions',
+  slot: 'Root',
+  overridesResolver: (props, styles) => {
+    const {
+      ownerState
+    } = props;
+    return [styles.root, !ownerState.disableSpacing && styles.spacing];
+  }
+})(({
+  ownerState
+}) => (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+  display: 'flex',
+  alignItems: 'center',
+  padding: 8
+}, !ownerState.disableSpacing && {
+  '& > :not(:first-of-type)': {
+    marginLeft: 8
+  }
+}));
+const CardActions = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function CardActions(inProps, ref) {
+  const props = (0,_styles_useThemeProps__WEBPACK_IMPORTED_MODULE_8__["default"])({
+    props: inProps,
+    name: 'MuiCardActions'
+  });
+
+  const {
+    disableSpacing = false,
+    className
+  } = props,
+        other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(props, _excluded);
+
+  const ownerState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+    disableSpacing
+  });
+
+  const classes = useUtilityClasses(ownerState);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CardActionsRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, className),
+    ownerState: ownerState,
+    ref: ref
+  }, other));
+});
+ true ? CardActions.propTypes
+/* remove-proptypes */
+= {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * The content of the component.
+   */
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().node),
+
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object),
+
+  /**
+   * @ignore
+   */
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().string),
+
+  /**
+   * If `true`, the actions do not have additional margin.
+   * @default false
+   */
+  disableSpacing: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().bool),
+
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: prop_types__WEBPACK_IMPORTED_MODULE_9___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_9___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_9___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_9___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object)])
+} : 0;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CardActions);
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/CardActions/cardActionsClasses.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@mui/material/CardActions/cardActionsClasses.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getCardActionsUtilityClass": () => (/* binding */ getCardActionsUtilityClass)
+/* harmony export */ });
+/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/utils/esm/generateUtilityClass/generateUtilityClass.js");
+/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/utils/esm/generateUtilityClasses/generateUtilityClasses.js");
+
+function getCardActionsUtilityClass(slot) {
+  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_0__["default"])('MuiCardActions', slot);
+}
+const cardActionsClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiCardActions', ['root', 'spacing']);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cardActionsClasses);
+
+/***/ }),
+
 /***/ "./node_modules/@mui/material/CardContent/CardContent.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@mui/material/CardContent/CardContent.js ***!
@@ -27915,10 +28064,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ToDo)
 /* harmony export */ });
+/* harmony import */ var _mui_icons_material_Delete__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/icons-material/Delete */ "./node_modules/@mui/icons-material/Delete.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Card/Card.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TextField/TextField.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardContent/CardContent.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/List/List.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardActions/CardActions.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _hooks_ToDo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/ToDo */ "./resources/js/hooks/ToDo/index.js");
 /* harmony import */ var _ToDoDetail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ToDoDetail */ "./resources/js/components/ToDoDetail.js");
@@ -27947,6 +28099,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function ToDo(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -27957,11 +28110,11 @@ function ToDo(props) {
   var toDo = {
     id: props.id,
     title: props.title
-  }; // useUpdateToDoMutateTaskを呼び出し
+  };
+  /** 名称更新イベント */
 
   var _useUpdateToDoMutateT = (0,_hooks_ToDo__WEBPACK_IMPORTED_MODULE_1__.useUpdateToDoMutateTask)(),
-      updateToDoMutation = _useUpdateToDoMutateT.updateToDoMutation; //上書き処理
-
+      updateToDoMutation = _useUpdateToDoMutateT.updateToDoMutation;
 
   var eventUpdateToDo = function eventUpdateToDo(event) {
     clearTimeout(timer);
@@ -27973,6 +28126,15 @@ function ToDo(props) {
       updateToDoMutation.mutate(data);
     }, 500);
     setTimer(newTimer);
+  };
+  /** 削除ボタン押下イベント */
+
+
+  var _useDeleteToDoMutateT = (0,_hooks_ToDo__WEBPACK_IMPORTED_MODULE_1__.useDeleteToDoMutateTask)(),
+      deleteToDoMutation = _useDeleteToDoMutateT.deleteToDoMutation;
+
+  var eventDeleteToDo = function eventDeleteToDo(event) {
+    deleteToDoMutation.mutate(toDo);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -27990,6 +28152,13 @@ function ToDo(props) {
             detail: detail
           }, detail.id);
         })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        edge: "end",
+        "aria-label": "delete",
+        onClick: eventDeleteToDo,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_icons_material_Delete__WEBPACK_IMPORTED_MODULE_10__["default"], {})
       })
     })]
   });
@@ -28130,10 +28299,48 @@ function ToDoDetail(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useDeleteToDoMutateTask": () => (/* reexport safe */ _useDeleteToDoMutateTask__WEBPACK_IMPORTED_MODULE_1__["default"]),
 /* harmony export */   "useUpdateToDoMutateTask": () => (/* reexport safe */ _useUpdateToDoMutateTask__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _useUpdateToDoMutateTask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useUpdateToDoMutateTask */ "./resources/js/hooks/ToDo/useUpdateToDoMutateTask.js");
+/* harmony import */ var _useDeleteToDoMutateTask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useDeleteToDoMutateTask */ "./resources/js/hooks/ToDo/useDeleteToDoMutateTask.js");
 
+
+
+/***/ }),
+
+/***/ "./resources/js/hooks/ToDo/useDeleteToDoMutateTask.js":
+/*!************************************************************!*\
+  !*** ./resources/js/hooks/ToDo/useDeleteToDoMutateTask.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_query__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-query */ "./node_modules/react-query/es/index.js");
+
+
+
+var useDeleteToDoMutateTask = function useDeleteToDoMutateTask() {
+  var queryClient = (0,react_query__WEBPACK_IMPORTED_MODULE_1__.useQueryClient)();
+  var deleteToDoMutation = (0,react_query__WEBPACK_IMPORTED_MODULE_1__.useMutation)(function (toDo) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]("/api/todos/" + toDo.id);
+  }, {
+    onSettled: function onSettled() {
+      queryClient.invalidateQueries("toDoList");
+    }
+  });
+  return {
+    deleteToDoMutation: deleteToDoMutation
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useDeleteToDoMutateTask);
 
 /***/ }),
 

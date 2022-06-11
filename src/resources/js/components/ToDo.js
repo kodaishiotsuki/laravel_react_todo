@@ -1,6 +1,17 @@
-import { Card, CardContent, List, TextField } from "@mui/material";
+import Delete from "@mui/icons-material/Delete";
+import {
+    Card,
+    CardActions,
+    CardContent,
+    IconButton,
+    List,
+    TextField,
+} from "@mui/material";
 import React, { useState } from "react";
-import { useUpdateToDoMutateTask } from "../hooks/ToDo";
+import {
+    useDeleteToDoMutateTask,
+    useUpdateToDoMutateTask,
+} from "../hooks/ToDo";
 import ToDoDetail from "./ToDoDetail";
 
 export default function ToDo(props) {
@@ -12,9 +23,8 @@ export default function ToDo(props) {
         title: props.title,
     };
 
-    // useUpdateToDoMutateTaskを呼び出し
+    /** 名称更新イベント */
     const { updateToDoMutation } = useUpdateToDoMutateTask();
-    //上書き処理
     const eventUpdateToDo = (event) => {
         clearTimeout(timer);
 
@@ -28,6 +38,11 @@ export default function ToDo(props) {
         setTimer(newTimer);
     };
 
+    /** 削除ボタン押下イベント */
+    const { deleteToDoMutation } = useDeleteToDoMutateTask();
+    const eventDeleteToDo = (event) => {
+        deleteToDoMutation.mutate(toDo);
+    };
     return (
         <Card>
             <TextField
@@ -44,6 +59,15 @@ export default function ToDo(props) {
                     })}
                 </List>
             </CardContent>
+            <CardActions>
+                <IconButton
+                    edge="end"
+                    aria-label="delete"
+                    onClick={eventDeleteToDo}
+                >
+                    <Delete />
+                </IconButton>
+            </CardActions>
         </Card>
     );
 }
