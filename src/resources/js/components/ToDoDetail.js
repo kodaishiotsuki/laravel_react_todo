@@ -4,7 +4,6 @@ import {
     ListItem,
     ListItemButton,
     ListItemIcon,
-    ListItemText,
     TextField,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -16,7 +15,8 @@ export default function ToDoDetail(props) {
     let toDoDetail = {
         id: props.detail.id,
         name: props.detail.name,
-        completed_flag: props.detail.completed_flag == 1,
+        completed_flag: props.detail.completed_flag,
+        to_do_id: props.detail.to_do_id,
     };
 
     // useUpdateToDoMutateTaskを呼び出し
@@ -58,7 +58,7 @@ export default function ToDoDetail(props) {
                 <ListItemIcon>
                     <Checkbox
                         edge="start"
-                        defaultChecked={props.detail.completed_flag == 1}
+                        checked={props.detail.completed_flag}
                         onChange={eventCheckToDoDetail}
                     />
                 </ListItemIcon>
