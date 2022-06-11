@@ -21,7 +21,7 @@ const useUpdateToDoDetailMutateTask = () => {
                         if (oldToDo.id == toDoDetail.to_do_id) {
                             let newToDoDetails = [];
                             oldToDo.to_do_details.map((oldToDoDetail) => {
-                                if (oldToDoDetail.id == ToDoDetail.id) {
+                                if (oldToDoDetail.id == toDoDetail.id) {
                                     newToDoDetails.push({
                                         ...oldToDoDetail,
                                         name: toDoDetail.name,

@@ -8,7 +8,10 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import Delete from "@mui/icons-material/Delete";
-import { useUpdateToDoDetailMutateTask } from "../hooks/ToDoDetail";
+import {
+    useDeleteToDoDetailMutateTask,
+    useUpdateToDoDetailMutateTask,
+} from "../hooks/ToDoDetail";
 
 export default function ToDoDetail(props) {
     const [timer, setTimer] = useState(null);
@@ -19,9 +22,10 @@ export default function ToDoDetail(props) {
         to_do_id: props.detail.to_do_id,
     };
 
-    // useUpdateToDoMutateTaskを呼び出し
+    /**
+     * 名称更新イベント
+     */
     const { updateToDoDetailMutation } = useUpdateToDoDetailMutateTask();
-    //上書き処理
     const eventUpdateToDoDetail = (event) => {
         clearTimeout(timer);
 
@@ -35,7 +39,7 @@ export default function ToDoDetail(props) {
         setTimer(newTimer);
     };
 
-    //チェックボックス
+    /** チェックボックス押下イベント */
     const eventCheckToDoDetail = (event) => {
         let data = {
             ...toDoDetail,
@@ -44,11 +48,21 @@ export default function ToDoDetail(props) {
         updateToDoDetailMutation.mutate(data);
     };
 
+    /** 削除ボタン押下イベント */
+    const { deleteToDoDetailMutation } = useDeleteToDoDetailMutateTask();
+    const eventDeleteToDoDetail = (event) => {
+        deleteToDoDetailMutation.mutate(toDoDetail);
+    };
+
     return (
         <ListItem
             key={props.detail.id}
             secondaryAction={
-                <IconButton edge="end" aria-label="delete">
+                <IconButton
+                    edge="end"
+                    aria-label="delete"
+                    onClick={eventDeleteToDoDetail}
+                >
                     <Delete />
                 </IconButton>
             }
