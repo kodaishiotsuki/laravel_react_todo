@@ -5,11 +5,45 @@ import {
     ListItemButton,
     ListItemIcon,
     ListItemText,
+    TextField,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Delete from "@mui/icons-material/Delete";
+import { useUpdateToDoDetailMutateTask } from "../hooks/ToDoDetail";
 
 export default function ToDoDetail(props) {
+    const [timer, setTimer] = useState(null);
+    let toDoDetail = {
+        id: props.detail.id,
+        name: props.detail.name,
+        completed_flag: props.detail.completed_flag == 1,
+    };
+
+    // useUpdateToDoMutateTaskを呼び出し
+    const { updateToDoDetailMutation } = useUpdateToDoDetailMutateTask();
+    //上書き処理
+    const eventUpdateToDoDetail = (event) => {
+        clearTimeout(timer);
+
+        const newTimer = setTimeout(() => {
+            let data = {
+                ...toDoDetail,
+                name: event.target.value,
+            };
+            updateToDoDetailMutation.mutate(data);
+        }, 500);
+        setTimer(newTimer);
+    };
+
+    //チェックボックス
+    const eventCheckToDoDetail = (event) => {
+        let data = {
+            ...toDoDetail,
+            completed_flag: event.target.checked,
+        };
+        updateToDoDetailMutation.mutate(data);
+    };
+
     return (
         <ListItem
             key={props.detail.id}
@@ -22,9 +56,19 @@ export default function ToDoDetail(props) {
         >
             <ListItemButton>
                 <ListItemIcon>
-                    <Checkbox edge="start" />
+                    <Checkbox
+                        edge="start"
+                        defaultChecked={props.detail.completed_flag == 1}
+                        onChange={eventCheckToDoDetail}
+                    />
                 </ListItemIcon>
-                <ListItemText primary={props.detail.name} />
+                <TextField
+                    variant="standard"
+                    margin="dense"
+                    defaultValue={props.detail.name}
+                    fullWidth
+                    onChange={eventUpdateToDoDetail} //更新処理
+                />
             </ListItemButton>
         </ListItem>
     );
